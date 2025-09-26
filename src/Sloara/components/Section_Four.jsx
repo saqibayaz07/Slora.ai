@@ -1,7 +1,7 @@
 import React from "react";
 import { Search, Target, Rocket, BarChart } from "lucide-react";
 
-export function  Section_Four () {
+export function Section_Four() {
   const steps = [
     {
       title: "Understand your business",
@@ -36,7 +36,7 @@ export function  Section_Four () {
       title: "Real Estate Agency",
       desc: "Automated lead qualification system that pre-screens potential buyers and books property viewings automatically.",
       quote: "+40% more booked property viewings with AI email automation",
-      img: "https://source.unsplash.com/400x250/?house",
+      img: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?_gl=1*1kncmse*_ga*MTA1MzE1NDgxNC4xNzU4OTIwMjg1*_ga_8JE65Q40S6*czE3NTg5MjAyODUkbzEkZzEkdDE3NTg5MjAyOTAkajU1JGwwJGgw",
     },
     {
       tag: "Automotive",
@@ -44,7 +44,7 @@ export function  Section_Four () {
       title: "Automotive Garage",
       desc: "AI-powered service agent handles appointment scheduling, inquiries, and follow-ups 24/7.",
       quote: "Reduced phone calls by 60% while increasing appointment bookings by 35%",
-      img: "https://source.unsplash.com/400x250/?car,garage",
+      img: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?_gl=1*1kncmse*_ga*MTA1MzE1NDgxNC4xNzU4OTIwMjg1*_ga_8JE65Q40S6*czE3NTg5MjAyODUkbzEkZzEkdDE3NTg5MjAyOTAkajU1JGwwJGgw",
     },
     {
       tag: "E-Commerce",
@@ -52,7 +52,7 @@ export function  Section_Four () {
       title: "E-Commerce Store",
       desc: "Customer support system that handles returns, product questions, and escalations automatically.",
       quote: "90% of customer inquiries resolved automatically, 24/7 support coverage",
-      img: "https://source.unsplash.com/400x250/?shopping,online",
+      img: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?_gl=1*1kncmse*_ga*MTA1MzE1NDgxNC4xNzU4OTIwMjg1*_ga_8JE65Q40S6*czE3NTg5MjAyODUkbzEkZzEkdDE3NTg5MjAyOTAkajU1JGwwJGgw",
     },
     {
       tag: "Consulting",
@@ -60,7 +60,7 @@ export function  Section_Four () {
       title: "Business Consulting Firm",
       desc: "Automated lead nurturing sequences and onboarding workflows streamline client acquisition.",
       quote: "3x increase in qualified leads and 50% faster client onboarding process",
-      img: "https://source.unsplash.com/400x250/?consulting,business",
+      img: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?_gl=1*1kncmse*_ga*MTA1MzE1NDgxNC4xNzU4OTIwMjg1*_ga_8JE65Q40S6*czE3NTg5MjAyODUkbzEkZzEkdDE3NTg5MjAyOTAkajU1JGwwJGgw",
     },
     {
       tag: "SaaS",
@@ -68,7 +68,7 @@ export function  Section_Four () {
       title: "SaaS Platform",
       desc: "Smart onboarding assistant guides new users, provides contextual help, and reduces support issues.",
       quote: "85% reduction in support tickets and 40% improvement in user activation",
-      img: "https://source.unsplash.com/400x250/?code,software",
+      img: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?_gl=1*1kncmse*_ga*MTA1MzE1NDgxNC4xNzU4OTIwMjg1*_ga_8JE65Q40S6*czE3NTg5MjAyODUkbzEkZzEkdDE3NTg5MjAyOTAkajU1JGwwJGgw",
     },
     {
       tag: "Logistics",
@@ -76,7 +76,7 @@ export function  Section_Four () {
       title: "Logistics Company",
       desc: "Proactive shipment tracking updates customers on status and delivery scheduling.",
       quote: "Eliminated 70% of 'Where is my package?' calls and improved customer satisfaction by 45%",
-      img: "https://source.unsplash.com/400x250/?logistics,shipping",
+      img: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?_gl=1*1kncmse*_ga*MTA1MzE1NDgxNC4xNzU4OTIwMjg1*_ga_8JE65Q40S6*czE3NTg5MjAyODUkbzEkZzEkdDE3NTg5MjAyOTAkajU1JGwwJGgw",
     },
   ];
 
@@ -116,16 +116,17 @@ export function  Section_Four () {
         <p className="text-gray-600 mt-2">Proven Results Across Industries</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {cases.map((item, index) => (
           <div
             key={index}
             className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow"
           >
+
             <img
               src={item.img}
               alt={item.title}
-              className="w-full h-40 object-cover"
+              className="w-full h-40 object-cover transform transition-transform duration-500 hover:scale-125 hover:translate-x-5 hover:translate-y-5"
             />
             <div className="p-6">
               <span
@@ -141,7 +142,48 @@ export function  Section_Four () {
             </div>
           </div>
         ))}
+
+
+
+      </div> */}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {cases.map((item, index) => (
+    <div
+      key={index}
+      className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow relative"
+    >
+      <div className="relative group">
+        <img
+          src={item.img}
+          alt={item.title}
+          className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+
+        {/* Popup image */}
+        <img
+          src={item.img}
+          alt={item.title}
+          className="absolute top-1/2 left-1/2 w-96 h-60 object-cover rounded-xl shadow-2xl transform -translate-x-1/2 -translate-y-1/2 scale-0 group-hover:scale-100 transition-transform duration-500 z-50"
+        />
       </div>
+
+      <div className="p-6">
+        <span
+          className={`text-white text-xs px-3 py-1 rounded-full ${item.tagColor}`}
+        >
+          {item.tag}
+        </span>
+        <h3 className="text-lg font-bold mt-4 mb-2">{item.title}</h3>
+        <p className="text-blue-700 font-medium text-sm mb-3">
+          “{item.quote}”
+        </p>
+        <p className="text-gray-600 text-sm">{item.desc}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
     </section>
   );
 };
