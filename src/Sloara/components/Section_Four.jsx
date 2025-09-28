@@ -17,7 +17,7 @@ function SplineScene({ scene, className }) {
 // Card (JSX version)
 function Card({ className, children }) {
   return (
-    <div className={`rounded-lg border bg-card text-card-foreground shadow-sm ${className}`}>{children}</div>
+    <div className={` bg-card bg-transparent text-card-foreground  ${className}`}>{children}</div>
   );
 }
 

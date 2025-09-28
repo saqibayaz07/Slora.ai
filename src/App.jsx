@@ -8,8 +8,11 @@ import ProtectedRoute from './Components/ProtectedRoute';
 import RowAnimation from './Components/Landing_Page';
 import Main_Layout from './Sloara/components/Main_Layout';
 import Footer from './Sloara/components/Footer';
+import BirdsBackground from './Components/Landing_Page';
+import { SpiralDemo } from './Sloara/components/Landing Page/SpiralDemo';
+import { useState } from 'react';
 function App() {
-
+  const [showIntro, setShowIntro] = useState(true)
   return (
     // <Router>
     //   <Routes>
@@ -24,12 +27,11 @@ function App() {
     // </Router>
     <>
 
-      <RowAnimation>
-        < Main_Layout />
-        <footer>
-          < Footer />
-        </footer>
-      </RowAnimation>
+      {showIntro ? (
+        <SpiralDemo onFinish={() => setShowIntro(false)} />
+      ) : (
+        <Main_Layout />
+      )}
     </>
   );
 }

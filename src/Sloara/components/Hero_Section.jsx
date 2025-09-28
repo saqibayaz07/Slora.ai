@@ -1,5 +1,8 @@
-import '../Styles/HeroAnimations.css';
-export default function Section_One() {
+// import AnimatedRobot from './AnimatedRobot';
+// import '../Styles/HeroAnimations.css';
+// import './AnimatedRobot.css';
+
+export  function Section_One() {
   return (
     <section className="relative z-0 w-full min-h-screen bg-gradient-to-br from-[#181818] via-[#111] to-[#181818] text-center text-white pt-8 md:pt-12 overflow-hidden flex items-center justify-center">
       {/* Background Shapes - responsive positioning and sizing */}

@@ -9,6 +9,14 @@ export default {
       fontFamily: {
         ubuntu: ['"Ubuntu"', "sans-serif"],
       },
+      colors: {
+        border: "hsl(var(--border))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+      },
+      borderColor: {
+        DEFAULT: "hsl(var(--border))",
+      },
     },
   },
   plugins: [],

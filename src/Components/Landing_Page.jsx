@@ -1,154 +1,208 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+// import React, { useState, useEffect } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
 
-export default function FixedRowAnimation({ children }) {
-    const [show, setShow] = useState([false, false, false]);
-    const [done, setDone] = useState(false);
-    const [showLogo, setShowLogo] = useState(false);
-    const [showBar, setShowBar] = useState(false);
-    const [typedText, setTypedText] = useState("");
-    const [finished, setFinished] = useState(false); // 👈 final stage
+// export default function FixedRowAnimation({ children }) {
+//     const [show, setShow] = useState([false, false, false]);
+//     const [done, setDone] = useState(false);
+//     const [showLogo, setShowLogo] = useState(false);
+//     const [showBar, setShowBar] = useState(false);
+//     const [typedText, setTypedText] = useState("");
+//     const [finished, setFinished] = useState(false); // 👈 final stage
 
-    const fullText = "Sloara.Ai";
+//     const fullText = "Sloara.Ai";
 
-    useEffect(() => {
-        const timers = [];
+//     useEffect(() => {
+//         const timers = [];
 
-        [0, 1, 2].forEach((i) => {
-            const t = setTimeout(() => {
-                setShow((prev) => {
-                    const updated = [...prev];
-                    updated[i] = true;
-                    return updated;
-                });
+//         [0, 1, 2].forEach((i) => {
+//             const t = setTimeout(() => {
+//                 setShow((prev) => {
+//                     const updated = [...prev];
+//                     updated[i] = true;
+//                     return updated;
+//                 });
 
-                if (i === 2) {
-                    const logoTimer = setTimeout(() => setShowLogo(true), 2000);
-                    timers.push(logoTimer);
+//                 if (i === 2) {
+//                     const logoTimer = setTimeout(() => setShowLogo(true), 2000);
+//                     timers.push(logoTimer);
 
-                    const hideTimer = setTimeout(() => setDone(true), 2000);
-                    timers.push(hideTimer);
+//                     const hideTimer = setTimeout(() => setDone(true), 2000);
+//                     timers.push(hideTimer);
 
-                    const barTimer = setTimeout(() => setShowBar(true), 3500);
-                    timers.push(barTimer);
-                }
-            }, i * 1500);
-            timers.push(t);
-        });
+//                     const barTimer = setTimeout(() => setShowBar(true), 3500);
+//                     timers.push(barTimer);
+//                 }
+//             }, i * 1500);
+//             timers.push(t);
+//         });
 
-        return () => timers.forEach((t) => clearTimeout(t));
-    }, []);
+//         return () => timers.forEach((t) => clearTimeout(t));
+//     }, []);
 
-    // Typing effect for Sloara.Ai
-    useEffect(() => {
-        if (showBar) {
-            let i = 0;
-            const typing = setInterval(() => {
-                if (i < fullText.length) {
-                    setTypedText((prev) => prev + fullText[i]);
-                    i++;
-                } else {
-                    clearInterval(typing);
+//     // Typing effect for Sloara.Ai
+//     useEffect(() => {
+//         if (showBar) {
+//             let i = 0;
+//             const typing = setInterval(() => {
+//                 if (i < fullText.length) {
+//                     setTypedText((prev) => prev + fullText[i]);
+//                     i++;
+//                 } else {
+//                     clearInterval(typing);
 
-                    // Jab typing finish ho jaye ga 1.5s baad next page show ho jaye ga
-                    setTimeout(() => setFinished(true), 1500);
-                }
-            }, 300); // typing speed
-            return () => clearInterval(typing);
-        }
-    }, [showBar]);
+//                     // Jab typing finish ho jaye ga 1.5s baad next page show ho jaye ga
+//                     setTimeout(() => setFinished(true), 1500);
+//                 }
+//             }, 300); // typing speed
+//             return () => clearInterval(typing);
+//         }
+//     }, [showBar]);
 
-    if (finished) {
-        return (
-            <motion.div
-                initial={{ opacity: 0 }}       // shuru mein hidden
-                animate={{ opacity: 1 }}       // dheere dheere visible
-                transition={{ duration: 1 }}   // 1s smooth fade
-                // className="flex items-center justify-center h-screen bg-gray-900 text-white text-4xl font-bold"
-            >
-                {/* Welcome Home Page */}
-                { children }
-            </motion.div>
-        );
+//     if (finished) {
+//         return (
+//             <motion.div
+//                 initial={{ opacity: 0 }}       // shuru mein hidden
+//                 animate={{ opacity: 1 }}       // dheere dheere visible
+//                 transition={{ duration: 1 }}   // 1s smooth fade
+//                 // className="flex items-center justify-center h-screen bg-gray-900 text-white text-4xl font-bold"
+//             >
+//                 {/* Welcome Home Page */}
+//                 { children }
+//             </motion.div>
+//         );
+//     }
+
+
+//     return (
+//         <div className="flex items-center justify-center h-screen bg-black relative overflow-hidden">
+//             <AnimatePresence>
+//                 {!done && (
+//                     <motion.div
+//                         initial={{ opacity: 1, y: 0 }}
+//                         animate={{ opacity: 1, y: 0 }}
+//                         exit={{ opacity: 0, y: -100 }}
+//                         transition={{ duration: 1 }}
+//                         className="text-white text-3xl font-bold flex space-x-8"
+//                     >
+//                         <span className="w-40 flex justify-center">
+//                             {show[0] && (
+//                                 <motion.span
+//                                     initial={{ opacity: 0, y: 20 }}
+//                                     animate={{ opacity: 1, y: 0 }}
+//                                     transition={{ duration: 0.6 }}
+//                                 >
+//                                     Innovative
+//                                 </motion.span>
+//                             )}
+//                         </span>
+
+//                         <span className="w-40 flex justify-center">
+//                             {show[1] && (
+//                                 <motion.span
+//                                     initial={{ opacity: 0, y: 20 }}
+//                                     animate={{ opacity: 1, y: 0 }}
+//                                     transition={{ duration: 0.6 }}
+//                                 >
+//                                     Imaginative
+//                                 </motion.span>
+//                             )}
+//                         </span>
+
+//                         <span className="w-40 flex justify-center">
+//                             {show[2] && (
+//                                 <motion.span
+//                                     initial={{ opacity: 0, y: 20 }}
+//                                     animate={{ opacity: 1, y: 0 }}
+//                                     transition={{ duration: 0.6 }}
+//                                 >
+//                                     Inspirational
+//                                 </motion.span>
+//                             )}
+//                         </span>
+//                     </motion.div>
+//                 )}
+//             </AnimatePresence>
+
+//             {/* Logo Animation */}
+//             {showLogo && (
+//                 <motion.img
+//                     src="/Slora_logo.png"
+//                     alt="Logo"
+//                     initial={{ x: "100vw", opacity: 0, scale: 0.8 }}
+//                     animate={{ x: 0, opacity: 1, scale: 1 }}
+//                     transition={{ duration: 1.5, ease: "easeOut" }}
+//                     className="absolute w-24 h-24"
+//                 />
+//             )}
+
+//             {/* Blue Bar + Typing Text */}
+//             {showBar && (
+//                 <div className="absolute bottom-1/3 flex items-center">
+//                     <motion.div
+//                         initial={{ width: "200px" }}
+//                         animate={{ width: `${200 - typedText.length * 20}px` }}
+//                         transition={{ duration: 0.3, ease: "linear" }}
+//                         className="h-1 bg-blue-500"
+//                     />
+//                     <span className="ml-2 text-blue-400 font-bold text-lg">
+//                         {typedText}
+//                     </span>
+//                 </div>
+//             )}
+//         </div>
+//     );
+// }
+
+
+
+
+// BirdsBackground.jsx
+import React, { useEffect, useRef, useState } from "react";
+
+const BirdsBackground = () => {
+  const [vantaEffect, setVantaEffect] = useState(null);
+  const vantaRef = useRef(null);
+
+  useEffect(() => {
+    if (!vantaEffect && window.VANTA) {
+      setVantaEffect(
+        window.VANTA.BIRDS({
+          el: vantaRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          backgroundColor: 0x0,
+          color1: 0xff9900,
+          backgroundAlpha: 0.9,
+        })
+      );
     }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
 
+  return (
+    <div
+      ref={vantaRef}
+      style={{
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "green",
+        fontSize: "2rem",
+        fontWeight: "bold",
+      }}
+    >
+      Welcome to Landing Page
+    </div>
+  );
+};
 
-    return (
-        <div className="flex items-center justify-center h-screen bg-black relative overflow-hidden">
-            <AnimatePresence>
-                {!done && (
-                    <motion.div
-                        initial={{ opacity: 1, y: 0 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -100 }}
-                        transition={{ duration: 1 }}
-                        className="text-white text-3xl font-bold flex space-x-8"
-                    >
-                        <span className="w-40 flex justify-center">
-                            {show[0] && (
-                                <motion.span
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6 }}
-                                >
-                                    Innovative
-                                </motion.span>
-                            )}
-                        </span>
-
-                        <span className="w-40 flex justify-center">
-                            {show[1] && (
-                                <motion.span
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6 }}
-                                >
-                                    Imaginative
-                                </motion.span>
-                            )}
-                        </span>
-
-                        <span className="w-40 flex justify-center">
-                            {show[2] && (
-                                <motion.span
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6 }}
-                                >
-                                    Inspirational
-                                </motion.span>
-                            )}
-                        </span>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            {/* Logo Animation */}
-            {showLogo && (
-                <motion.img
-                    src="/Slora_logo.png"
-                    alt="Logo"
-                    initial={{ x: "100vw", opacity: 0, scale: 0.8 }}
-                    animate={{ x: 0, opacity: 1, scale: 1 }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="absolute w-24 h-24"
-                />
-            )}
-
-            {/* Blue Bar + Typing Text */}
-            {showBar && (
-                <div className="absolute bottom-1/3 flex items-center">
-                    <motion.div
-                        initial={{ width: "200px" }}
-                        animate={{ width: `${200 - typedText.length * 20}px` }}
-                        transition={{ duration: 0.3, ease: "linear" }}
-                        className="h-1 bg-blue-500"
-                    />
-                    <span className="ml-2 text-blue-400 font-bold text-lg">
-                        {typedText}
-                    </span>
-                </div>
-            )}
-        </div>
-    );
-}
+export default BirdsBackground;
