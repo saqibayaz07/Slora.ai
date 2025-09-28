@@ -184,9 +184,15 @@ export function Section_Four() {
   ];
 
   return (
-  <section className="relative bg-gradient-to-br from-[#eaf6ff] via-[#f7faff] to-[#eaf6ff] py-6 sm:py-10 md:py-16 px-2 sm:px-4 md:px-8 lg:px-20 overflow-hidden">
+  <section className="relative bg-[#181818] py-6 sm:py-10 md:py-16 px-2 sm:px-4 md:px-8 lg:px-20 overflow-hidden">
+    {/* Glowing blue circles background */}
+    <div className="absolute top-10 left-10 w-32 h-32 bg-cyan-400 rounded-full opacity-30 blur-2xl z-0"></div>
+    <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-cyan-500 rounded-full opacity-40 blur-xl z-0"></div>
+    <div className="absolute bottom-10 right-20 w-24 h-24 bg-cyan-300 rounded-full opacity-20 blur-2xl z-0"></div>
+    <div className="absolute top-1/3 right-1/4 w-20 h-20 bg-cyan-400 rounded-full opacity-30 blur-xl z-0"></div>
+    <div className="absolute bottom-1/4 left-1/3 w-12 h-12 bg-cyan-500 rounded-full opacity-40 blur-lg z-0"></div>
       {/* Interactive 3D Robot Section */}
-      <Card className="w-full min-h-[340px] sm:min-h-[400px] md:min-h-[500px] bg-black/[0.96] relative overflow-hidden mb-8 sm:mb-10 flex flex-col justify-center items-center">
+  <Card className="w-full min-h-[340px] sm:min-h-[400px] md:min-h-[500px] bg-black relative overflow-hidden mb-8 sm:mb-10 flex flex-col justify-center items-center">
         <Spotlight className="-top-32 left-1/2 sm:left-1/2 mq   qqqqqwwwsssadddaaaasswwd:left-60 md:-top-20" />
         <div className="flex flex-col md:flex-row h-full w-full">
           {/* Left content */}
@@ -200,12 +206,7 @@ export function Section_Four() {
           </div>
         </div>
       </Card>
-  {/* Soft blue background shapes */}
-  {/* Removed the largest cyan circle */}
-  {/* Removed the second large cyan circle */}
-  {/* Minimal accent shapes for clean look */}
-  <div className="absolute left-1/2 bottom-0 w-20 h-20 sm:w-32 sm:h-32 bg-cyan-200 rounded-full opacity-30 z-0" style={{transform: 'translateX(-50%)'}}></div>
-  <div className="absolute right-4 bottom-4 w-16 h-16 sm:w-24 sm:h-24 bg-cyan-200 rounded-full opacity-20 z-0"></div>
+  {/* Removed accent shapes for pure black background */}
       {/* 4-Step Method */}
       <div className="text-center mb-6 sm:mb-10 md:mb-16">
         <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-blue-700">Our 4-Step Method</h2>
@@ -262,6 +263,11 @@ export function Section_Four() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Separator */}
+      <div className="w-full flex justify-center my-10">
+        <div className="h-1 w-2/3 bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 rounded-full opacity-60"></div>
       </div>
 
       {/* Modal Carousel */}
