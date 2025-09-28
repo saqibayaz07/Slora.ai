@@ -1,0 +1,124 @@
+@keyframes rotateCircle {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.08); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+.animate-rotate { animation: rotateCircle 18s linear infinite; }
+
+@keyframes pulseCircle {
+  0% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.15); }
+  100% { opacity: 0.3; transform: scale(1); }
+}
+.animate-pulse { animation: pulseCircle 7s ease-in-out infinite; }
+
+@keyframes scaleCircle {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(0.9); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.animate-scale { animation: scaleCircle 10s ease-in-out infinite; }
+@keyframes moveCircle4 {
+  0% { transform: translateX(0) translateY(0) scale(1); }
+  20% { transform: translateX(40px) translateY(-20px) scale(1.08); }
+  40% { transform: translateX(-30px) translateY(30px) scale(1.12); }
+  60% { transform: translateX(20px) translateY(-10px) scale(1.05); }
+  80% { transform: translateX(-10px) translateY(20px) scale(1.09); }
+  100% { transform: translateX(0) translateY(0) scale(1); }
+}
+@keyframes moveCircle5 {
+  0% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-40px) scale(1.15); }
+  50% { transform: translateY(30px) scale(1.05); }
+  75% { transform: translateY(-20px) scale(1.12); }
+  100% { transform: translateY(0) scale(1); }
+}
+.animate-move4 { animation: moveCircle4 14s ease-in-out infinite; }
+.animate-move5 { animation: moveCircle5 11s ease-in-out infinite; }
+@keyframes moveCircle1 {
+  0% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(30px) scale(1.08); }
+  50% { transform: translateY(-20px) scale(1.12); }
+  75% { transform: translateY(10px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes moveCircle2 {
+  0% { transform: translateX(0) scale(1); }
+  25% { transform: translateX(-30px) scale(1.05); }
+  50% { transform: translateX(20px) scale(1.1); }
+  75% { transform: translateX(-10px) scale(1.07); }
+  100% { transform: translateX(0) scale(1); }
+}
+@keyframes moveCircle3 {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.12); }
+  50% { transform: scale(1.08); }
+  75% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.animate-move1 { animation: moveCircle1 8s ease-in-out infinite; }
+.animate-move2 { animation: moveCircle2 10s ease-in-out infinite; }
+.animate-move3 { animation: moveCircle3 12s ease-in-out infinite; }
+
+/* Bubble Animations for Hero Section Sides */
+@keyframes bubbleZoom {
+  0% { transform: scale(1); opacity: 0.7; }
+  40% { transform: scale(1.3); opacity: 1; }
+  60% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+.bubble-zoom {
+  animation: bubbleZoom 7s cubic-bezier(0.4,0,0.2,1) infinite;
+}
+
+@keyframes bubbleBurst {
+  0% { transform: scale(1); opacity: 1; }
+  70% { transform: scale(1.5); opacity: 0.8; }
+  80% { transform: scale(2); opacity: 0.3; }
+  100% { transform: scale(0); opacity: 0; }
+}
+.bubble-burst {
+  animation: bubbleBurst 5s cubic-bezier(0.7,0,0.3,1) infinite;
+}
+
+/* More Bubble Animation Styles for Sides */
+@keyframes bubbleGlow {
+  0% { box-shadow: 0 0 0 0 #181a19, 0 0 10px 2px #195e57; opacity: 0.8; }
+  50% { box-shadow: 0 0 30px 10px #233836, 0 0 40px 20px #082e2a; opacity: 1; }
+  100% { box-shadow: 0 0 0 0 #456663, 0 0 10px 2px #133834; opacity: 0.8; }
+}
+.bubble-glow {
+  animation: bubbleGlow 6s ease-in-out infinite;
+}
+
+@keyframes bubbleWave {
+  0% { transform: translateY(0) scale(1); opacity: 0.7; }
+  25% { transform: translateY(-10px) scale(1.1); opacity: 1; }
+  50% { transform: translateY(10px) scale(0.9); opacity: 0.8; }
+  75% { transform: translateY(-5px) scale(1.05); opacity: 0.9; }
+  100% { transform: translateY(0) scale(1); opacity: 0.7; }
+}
+.bubble-wave {
+  animation: bubbleWave 8s ease-in-out infinite;
+}
+
+@keyframes bubbleSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+.bubble-spin {
+  animation: bubbleSpin 9s linear infinite;
+}
+
+@keyframes bubbleFade {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+.bubble-fade {
+  animation: bubbleFade 7s ease-in-out infinite;
+}

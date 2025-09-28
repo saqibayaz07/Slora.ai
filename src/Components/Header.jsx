@@ -25,16 +25,16 @@ const Header = () => {
     };
 
     return (
-        <header className='flex justify-between items-center px-4 py-2 bg-white shadow-md'>
+        <header className='flex justify-between items-center px-4 py-2 bg-[#181818] shadow-md font-ubuntu'>
             <div className="flex items-center gap-2">
-                <SiGoogledocs className='text-blue-500 text-4xl' />
-                <h1 className='text-3xl text-gray-800 font-bold'>Docs</h1>
+                <SiGoogledocs className='text-cyan-400 text-4xl' />
+                <h1 className='text-3xl text-white font-bold font-ubuntu'>Slora</h1>
             </div>
             <div className="relative flex items-center">
-                <IoSearchOutline className='absolute left-3 text-gray-400' />
+                <IoSearchOutline className='absolute left-3 text-cyan-400' />
                 <input
                     type="text"
-                    className="pl-10 border w-full max-w-xs border-gray-300 rounded-full py-2 px-3 focus:outline-none focus:ring focus:ring-blue-500"
+                    className="pl-10 border w-full max-w-xs border-cyan-400 bg-[#222] text-white rounded-full py-2 px-3 focus:outline-none focus:ring focus:ring-cyan-400 font-ubuntu"
                     placeholder="Search..."
                     onChange={handleSearchChange}
                 />

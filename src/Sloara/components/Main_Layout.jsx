@@ -10,7 +10,7 @@ import { Section_Six } from './Section_Six'
 export default function Main_Layout() {
   return (
     <>
-
+  
       <Navbar />
       < Section_One />
       < Section_Two />

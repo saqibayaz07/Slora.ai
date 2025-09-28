@@ -1,0 +1,93 @@
+/* Center container for robot */
+.robot-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 320px;
+	position: relative;
+	z-index: 30;
+	opacity: 0.6;
+		box-shadow: none;
+	transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1), box-shadow 1.2s cubic-bezier(0.4,0,0.2,1);
+	animation: robotFloat 3.5s ease-in-out infinite;
+}   
+
+@keyframes robotFloat {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-18px); }
+}
+
+.robot-eye-svg {
+	animation: eyeBlinkSvg 2.2s infinite;
+	opacity: 0.8;
+	transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes eyeBlinkSvg {
+	0%, 90%, 100% { ry: 8; }
+	95% { ry: 2; }
+}
+
+.robot-mouth-svg {
+	animation: mouthSmileSvg 3s infinite;
+	opacity: 0.7;
+	transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes mouthSmileSvg {
+	0%, 100% { height: 8px; }
+	50% { height: 14px; }
+}
+
+.robot-antenna-svg {
+	animation: antennaWiggleSvg 1.8s infinite;
+	transform-origin: bottom center;
+	opacity: 0.6;
+	transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes antennaWiggleSvg {
+	0%, 100% { transform: rotate(0deg); }
+	50% { transform: rotate(18deg); }
+}
+
+.robot-arm-svg.left {
+	animation: armWaveSvgLeft 2.5s infinite;
+	transform-origin: top right;
+	opacity: 0.5;
+	transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes armWaveSvgLeft {
+	0%, 100% { transform: rotate(0deg); }
+	50% { transform: rotate(-18deg); }
+}
+
+.robot-arm-svg.right {
+	animation: armWaveSvgRight 2.5s infinite;
+	transform-origin: top left;
+	opacity: 0.5;
+	transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes armWaveSvgRight {
+	0%, 100% { transform: rotate(0deg); }
+	50% { transform: rotate(18deg); }
+}
+
+.robot-leg-svg.left {
+	animation: legMoveSvgLeft 2.5s infinite;
+	transform-origin: top center;
+	opacity: 0.5;
+	transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes legMoveSvgLeft {
+	0%, 100% { transform: rotate(0deg); }
+	50% { transform: rotate(-8deg); }
+}
+
+.robot-leg-svg.right {
+	animation: legMoveSvgRight 2.5s infinite;
+	transform-origin: top center;
+	opacity: 0.5;
+	transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes legMoveSvgRight {
+	0%, 100% { transform: rotate(0deg); }
+	50% { transform: rotate(8deg); }
+}
