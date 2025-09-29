@@ -11,8 +11,8 @@ import Footer from './Sloara/components/Footer';
 import BirdsBackground from './Components/Landing_Page';
 import { SpiralDemo } from './Sloara/components/Landing Page/SpiralDemo';
 import { useState } from 'react';
+import FixedRowAnimation from './Components/Landing_Page';
 function App() {
-  const [showIntro, setShowIntro] = useState(true)
   return (
     // <Router>
     //   <Routes>
@@ -26,12 +26,14 @@ function App() {
     //   </Routes>
     // </Router>
     <>
-
-      {showIntro ? (
-        <SpiralDemo onFinish={() => setShowIntro(false)} />
-      ) : (
-        <Main_Layout />
-      )}
+      <>
+        <FixedRowAnimation>
+          <Main_Layout />
+          <footer>
+            <Footer></Footer>
+          </footer>
+        </FixedRowAnimation>
+      </>
     </>
   );
 }
