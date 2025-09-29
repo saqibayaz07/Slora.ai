@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import "../Styles/Home.css";
 import { v4 as uuidV4 } from "uuid";
 import { useNavigate } from 'react-router-dom';
-import Header from './Header';
 import { AiOutlinePlus, AiOutlineEllipsis } from 'react-icons/ai';
 import { SiGoogledocs } from "react-icons/si";
 import axios from "axios";
